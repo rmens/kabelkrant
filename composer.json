@@ -1,0 +1,12 @@
+{
+    "name": "marijnvdwerf/kabelkrant",
+    "authors": [
+        {
+            "name": "Marijn van der Werf",
+            "email": "marijn.vanderwerf@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "~1.0"
+    }
+}
