@@ -34,6 +34,13 @@
             position: absolue;
             background: #4C4C4C;
         }
+		.top__datetime {
+		    position: absolute;
+		    left: 60%;
+		    top: 6%;
+			color: #F5F5F5;
+			font-size: 29px;
+        }
 
         .ticker {
             position: absolute;
@@ -131,10 +138,14 @@
             z-index: 85;
         }
     </style>
+	
+	<script type="text/javascript" src="date_time.js"></script>
 </head>
 <body>
 <div class="viewport">
-	<div class="top"></div>
+	<div class="top">
+		<span class="top__datetime">Dinsdag 29 november 2016</span>
+	</div>
     <div class="carousel">
         {% for item in items %}
             {% if item.isNews %}
