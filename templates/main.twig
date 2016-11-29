@@ -25,6 +25,13 @@
             width: 1280px;
             height: 720px;
             position: relative;
+            background: #B5B5B5;
+        }
+
+		.top {
+            width: 1280px;
+            height: 104px;
+            position: absolue;
             background: #4C4C4C;
         }
 
@@ -127,6 +134,7 @@
 </head>
 <body>
 <div class="viewport">
+<div class="top">
     <div class="carousel">
         {% for item in items %}
             {% if item.isNews %}
