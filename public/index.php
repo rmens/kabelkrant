@@ -1,6 +1,6 @@
 <?php
 
-define('NEWS_ITEM_LIMIT', 15);
+define('NEWS_ITEM_LIMIT', 10);
 define('ONGOING_EVENT_LIMIT', 5);
 define('UPCOMING_EVENT_LIMIT', 5);
 
@@ -47,7 +47,7 @@ foreach ($nieuws->xpath('//item') as $nieuwsitem) {
     $item = new NewsItem();
     $item->title = (string)$nieuwsitem->title;
     $item->date = DateTime::createFromFormat('D, d M Y H:i:s T', (string)$nieuwsitem->pubDate);
-    $item->content = (string)$nieuwsitem->description;
+    $item->content = (string)$nieuwsitem->tekst;
 
     $photo = (string)$nieuwsitem->photo;
     if (!empty($photo)) {
