@@ -1,8 +1,8 @@
 <div class="carousel__slide">
     <div class="carousel__punch"></div>
 
-    <h1>{{ item.title | striptags|trim }}</h1>
-    {{ item.content | striptags|trim }}
+    <h1>{{ item.title | striptags|trim|raw }}</h1>
+    {{ item.content | striptags|trim|raw }}
 
     {% if item.photo %}
         <div class="carousel__photo" style="background-image: url('{{ item.photo }}');"></div>
