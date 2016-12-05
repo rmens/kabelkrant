@@ -1,8 +1,8 @@
 <?php
 
 define('NEWS_ITEM_LIMIT', 10);
-define('ONGOING_EVENT_LIMIT', 3);
-define('UPCOMING_EVENT_LIMIT', 2);
+define('ONGOING_EVENT_LIMIT', 5);
+define('UPCOMING_EVENT_LIMIT', 3);
 
 setlocale(LC_ALL, 'nl_NL');
 
