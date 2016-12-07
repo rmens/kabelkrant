@@ -4,7 +4,7 @@ define('NEWS_ITEM_LIMIT', 10);
 define('ONGOING_EVENT_LIMIT', 5);
 define('UPCOMING_EVENT_LIMIT', 3);
 define('USE_THUMBOR', true);
-define('THUMBOR_BASEURL', "http://icecast.zuidwestfm.nl:8000/unsafe/440x400/filters:format(webp)/");
+define('THUMBOR_BASEURL', "http://icecast.zuidwestfm.nl:8000/unsafe/440x400/smart/filters:format(webp)/");
 
 setlocale(LC_ALL, 'nl_NL.utf8');
 
