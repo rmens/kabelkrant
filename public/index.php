@@ -4,7 +4,7 @@ define('NEWS_ITEM_LIMIT', 10);
 define('ONGOING_EVENT_LIMIT', 5);
 define('UPCOMING_EVENT_LIMIT', 3);
 
-setlocale(LC_ALL, 'nl_NL');
+setlocale(LC_ALL, 'nl_NL.utf8');
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
