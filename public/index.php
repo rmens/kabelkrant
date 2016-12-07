@@ -3,12 +3,14 @@
 define('NEWS_ITEM_LIMIT', 10);
 define('ONGOING_EVENT_LIMIT', 5);
 define('UPCOMING_EVENT_LIMIT', 3);
-define('USE_THUMBOR', yes);
+define('USE_THUMBOR', true);
 define('THUMBOR_BASEURL', "http://icecast.zuidwestfm.nl:8000/unsafe/445x402/smart/filters:format(webp)/");
 
 setlocale(LC_ALL, 'nl_NL.utf8');
 
 require_once __DIR__ . '/../vendor/autoload.php';
+
+function getImageUrl($url) {if(USE_THUMBOR) {return THUMBOR_BASEURL . urlencode($url); } return $url;}
 
 $today = new DateTime();
 $today->setTime(0, 0, 0);
@@ -53,7 +55,7 @@ foreach ($nieuws->xpath('//item') as $nieuwsitem) {
 
     $photo = (string)$nieuwsitem->photo;
     if (!empty($photo)) {
-        $item->photo = $nieuwsitem->photourl . $photo;
+        $item->photo = getImageUrl($nieuwsitem->photourl . $photo);
     }
 
     $items[] = $item;
@@ -110,7 +112,7 @@ foreach ($agenda->xpath('//item') as $agendaItem) {
 
     $photo = (string)$agendaItem->photo;
     if (!empty($photo)) {
-        $item->photo = $agendaItem->photourl . $photo;
+        $item->photo = getImageUrl($agendaItem->photourl . $photo);
     }
 
     $beginDiff = $beginDate->diff($today);
