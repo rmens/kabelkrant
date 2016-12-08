@@ -14,6 +14,8 @@ function getImageUrl($url) {if(USE_THUMBOR) {return THUMBOR_BASEURL . urlencode(
 
 $today = new DateTime();
 $today->setTime(0, 0, 0);
+$tomorrow = new DateTime('tomorrow');
+$tomorrow->setTime(0, 0, 0);
 
 $vandaagOpTv = null;
 $tvgids = file_get_contents('http://www.zuidwesttv.nl/feeds/tvgids');
@@ -27,6 +29,15 @@ foreach ($tvgids->xpath('//item') as $item) {
     }
 }
 
+$morgenOpTv = null;
+foreach ($tvgids->xpath('//item') as $item) {
+    $date = new DateTime($item->date);
+
+    if ($date->format('Y-m-d') == $tomorrow->format('Y-m-d')) {
+        $morgenOpTv = (string)$item->title;
+        break;
+    }
+}
 
 class NewsItem
 {
