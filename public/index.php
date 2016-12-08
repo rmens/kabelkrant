@@ -39,6 +39,8 @@ foreach ($tvgids->xpath('//item') as $item) {
     }
 }
 
+$nuOpFM = file_get_contents("http://www.zuidwesttv.nl/teksttv/rds_programma.php")
+
 class NewsItem
 {
     public $title;
